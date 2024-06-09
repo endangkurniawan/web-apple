@@ -44,8 +44,9 @@
             li.footer__title__item
               span= item.txt
               if item.link
-                br
+                ='\n'
                 a(href=item.link) #{item.linkText}
+
 
       .footer__nav
         .footer__nav__box
@@ -212,3 +213,15 @@
                 a.footer__nav__link(href="#") Events
               li.footer__nav__items
                 a.footer__nav__link(href="#") Contact Apple
+      .footer__copyright
+        .footer__copyright__shop
+          p.footer__copyright__desc
+            | More ways to shop:
+            ='\n'
+            a(href="#") Find an Apple Store
+            ='\n'
+            | or
+            ='\n'
+            a(href="#") other retailer
+            ='\n'
+            | near you. Or call 1-800-MY-APPLE.
