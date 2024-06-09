@@ -38,7 +38,7 @@
 .footer
   .container
     .footer__wrapper
-      .footer-section__title
+      .footer__title
         ul.footer__title__list
           each item in footerSectionData
             li.footer__title__item
@@ -214,7 +214,7 @@
               li.footer__nav__items
                 a.footer__nav__link(href="#") Contact Apple
       .footer__copyright
-        .footer__copyright__shop
+        .footer__copyright__txt
           p.footer__copyright__desc
             | More ways to shop:
             ='\n'
@@ -225,3 +225,26 @@
             a(href="#") other retailer
             ='\n'
             | near you. Or call 1-800-MY-APPLE.
+        .footer__copyright__bottom
+          .footer__copyright__locale
+            a.footer__locale__link(href="#")
+              | United States
+          .footer__copyright__legal
+            p.footer__legal__txt
+              | Copyright &#169; 2024 Apple Inc. All rights reserved.
+            ul.footer__legal__list
+              li.footer__legal__item
+                a.footer__legal__link(href="#")
+                  | Privacy Policy
+              li.footer__legal__item
+                a.footer__legal__link(href="#")
+                  | Terms of Use
+              li.footer__legal__item
+                a.footer__legal__link(href="#")
+                  | Sales and Refunds
+              li.footer__legal__item
+                a.footer__legal__link(href="#")
+                  | Legal
+              li.footer__legal__item
+                a.footer__legal__link(href="#")
+                  | Site Map
