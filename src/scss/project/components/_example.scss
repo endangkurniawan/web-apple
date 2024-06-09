@@ -1,0 +1,40 @@
+/* ==========================================================================
+   Components Example
+   ========================================================================== */
+
+.item {
+  $i: &;
+  &__box {
+    overflow: hidden;
+    transition: all .35s ease;
+    background-color: color(white);
+    @include radius(1);
+    @include shadow(0);
+    &:hover {
+      cursor: pointer;
+      transform: translateY(-4px);
+      @include shadow(1);
+    }
+  }
+  &__img {
+    position: relative;
+    padding-bottom: 65%;
+    overflow: hidden;
+    &__el {
+      display: block;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      object-fit: cover;
+      position: absolute;
+    }
+  }
+  &__text {
+    padding: 32px;
+  }
+  &__desc {
+    color: color(grey, 0);
+    margin-bottom: 0;
+  }
+}

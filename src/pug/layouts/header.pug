@@ -1,0 +1,444 @@
+//-------------------------------------------------------------------------------
+  @name: Layout | Header
+  @description: Header
+  -------------------------------------------------------------------------------//
+
+//- Data Header
+-
+  const dataHeader = [
+    {
+      text: 'Store',
+      link: '#store',
+      items: [
+        {
+          title: 'Shop',
+          items: [
+            { text: 'Shop the Latest', link:'#shop' },
+            { text: 'Mac', link:'#mac' },
+            { text: 'iPad', link:'#iPad' },
+            { text: 'iPhone', link:'#iPhone' },
+            { text: 'Apple Watch', link:'#appleWatch' },
+            { text: 'Apple Vision Pro', link:'#appleVision' },
+            { text: 'Accessories', link:'#accessories' },
+          ]
+        },
+        {
+          title: 'Quick Links',
+          items: [
+            { text: 'Find a Store', link:'#findStore' },
+            { text: 'Order Status', link:'#orderStatus' },
+            { text: 'Apple Trade In', link:'#appleTrade' },
+            { text: 'Financing', link:'#financing' },
+          ]
+        },
+        {
+          title: 'Shop Special Stores',
+          items: [
+            { text: 'Certified Refurbished', link:'#certifiedRefurbished' },
+            { text: 'Education', link:'#education' },
+            { text: 'Business', link:'#business' },
+            { text: 'Veterans and Military', link:'#veteransMilitary' },
+            { text: 'Government', link:'#government' },
+          ]
+        },
+      ]
+    },
+    {
+      text: 'Mac',
+      link: '#mac',
+      items: [
+        {
+          title: 'Explore Mac',
+          items: [
+            { text: 'Explore All Mac', link:'#exploreAllMac' },
+            { text: 'MacBook Aire', link:'#macAir' },
+            { text: 'MacBook Pro', link:'#macbookPro' },
+            { text: 'iMac', link:'#imac' },
+            { text: 'Mac Mini', link:'#macMini' },
+            { text: 'Mac Studio', link:'#macStudio' },
+            { text: 'Mac Pro', link:'#macPro' },
+            { text: 'Displays', link:'#displays' },
+          ]
+        },
+        {
+          title: 'Shop Mac',
+          items: [
+            { text: 'Shop Mac', link:'#shopMac' },
+            { text: 'Mac Accesories', link:'#macAccesories' },
+            { text: 'Apple Trade In', link:'#appleTrade' },
+            { text: 'Financing', link:'#financing' },
+          ]
+        },
+        {
+          title: 'More from Mac',
+          items: [
+            { text: 'Mac Suport', link:'#macSuport' },
+            { text: 'AppleCare+ for Mac', link:'#appleCare' },
+            { text: 'macsOS Sonoma', link:'#macSonoma' },
+            { text: 'Apps by Apple', link:'#appsApple' },
+            { text: 'Continuity', link:'#continuity' },
+            { text: 'iCloud+', link:'#iCloud' },
+            { text: 'MacFor Businnes', link:'#macBusiness' },
+            { text: 'Education', link:'#education' },
+          ]
+        },
+      ]
+    },
+    {
+      text: 'iPad',
+      link: '#iPad',
+      items: [
+        {
+          title: 'Explore iPad',
+          items: [
+            { text: 'Explore All iPad', link:'#exploreAllMac' },
+            { text: 'iPad Pro', link:'#macAir' },
+            { text: 'iPad Air', link:'#macbookPro' },
+            { text: 'iPad Mini', link:'#imac' },
+            { text: 'Apple Pencil', link:'#macMini' },
+            { text: 'Keyboards', link:'#macStudio' },
+          ]
+        },
+        {
+          title: 'Shop iPad',
+          items: [
+            { text: 'Shop iPad', link:'#shopMac' },
+            { text: 'iPad Accesories', link:'#macAccesories' },
+            { text: 'Apple Trade In', link:'#appleTrade' },
+            { text: 'Financing', link:'#financing' },
+          ]
+        },
+        {
+          title: 'More from iPad',
+          items: [
+            { text: 'iPad Suport', link:'#macSuport' },
+            { text: 'AppleCare+ for iPad', link:'#appleCare' },
+            { text: 'iPadOS 17', link:'#macSonoma' },
+            { text: 'Apps by Apple', link:'#appsApple' },
+            { text: 'iCloud+', link:'#iCloud' },
+            { text: 'Education', link:'#education' },
+          ]
+        },
+      ]
+    },
+    {
+      text: 'iPhone',
+      link: '#iPhone',
+      items: [
+        {
+          title: 'Explore iPhone',
+          items: [
+            { text: 'Explore All iPhone', link:'#exploreAllMac' },
+            { text: 'iPhone 15 Pro', link:'#macAir' },
+            { text: 'iPhone 15', link:'#macbookPro' },
+            { text: 'iPhone 14', link:'#imac' },
+            { text: 'iPhone 13', link:'#macMini' },
+            { text: 'iPhone SE', link:'#macStudio' },
+          ]
+        },
+        {
+          title: 'Shop iPhone',
+          items: [
+            { text: 'Shop iPhone', link:'#shopMac' },
+            { text: 'iPhone Accesories', link:'#macAccesories' },
+            { text: 'Apple Trade In', link:'#appleTrade' },
+            { text: 'Carrier Deals at Apple', link:'#carrierApple' },
+            { text: 'Financing', link:'#financing' },
+          ]
+        },
+        {
+          title: 'More from iPhone',
+          items: [
+            { text: 'iPhone Suport', link:'#macSuport' },
+            { text: 'AppleCare+ for iPhone', link:'#appleCare' },
+            { text: 'iOS 17', link:'#macSonoma' },
+            { text: 'Apps by Apple', link:'#appsApple' },
+            { text: 'iPhone Privacy', link:'#appsApple' },
+            { text: 'iCloud+', link:'#iCloud' },
+            { text: 'Wallet, Pay, Card', link:'#iCloud' },
+            { text: 'Education', link:'#education' },
+          ]
+        },
+      ]
+    },
+    {
+      text: 'Watch',
+      link: '#watch',
+      items: [
+        {
+          title: 'Explore Watch',
+          items: [
+            { text: 'Explore All Watch', link:'#exploreAllMac' },
+            { text: 'Apple Watch Series', link:'#macAir' },
+            { text: 'Applw Watch Ultra 2', link:'#macbookPro' },
+            { text: 'Apple Watch SE', link:'#imac' },
+            { text: 'Apple Watch Nike', link:'#macMini' },
+            { text: 'Apple Watch Hermes', link:'#macStudio' },
+          ]
+        },
+        {
+          title: 'Shop Watch',
+          items: [
+            { text: 'Shope Apple Watch', link:'#shopMac' },
+            { text: 'Apple Watch Studio', link:'#macAccesories' },
+            { text: 'Apple Watch Bands', link:'#appleTrade' },
+            { text: 'Apple Watch Accesories', link:'#carrierApple' },
+            { text: 'Apple Trade In', link:'#financing' },
+            { text: 'Financing', link:'#financing' },
+          ]
+        },
+        {
+          title: 'More from Watch',
+          items: [
+            { text: 'Apple Watch Support', link:'#macSuport' },
+            { text: 'AppleCare+', link:'#appleCare' },
+            { text: 'watchOS 10', link:'#macSonoma' },
+            { text: 'Apps by Apple', link:'#appsApple' },
+            { text: 'Apple Fitness+', link:'#appsApple' },
+          ]
+        },
+      ]
+    },
+    {
+      text: 'Vision',
+      link: '#vision',
+      items: [
+        {
+          title: 'Explore Vision',
+          items: [
+            { text: 'Explore Apple Vision Pro', link:'#exploreAllMac' },
+          ]
+        },
+        {
+          title: 'Shop Vision',
+          items: [
+            { text: 'Shop Apple Vision Pro', link:'#shopMac' },
+            { text: 'Apple Vision Pro Accesories', link:'#macAccesories' },
+            { text: 'Book a Demo', link:'#macAccesories' },
+            { text: 'Financing', link:'#macAccesories' },
+          ]
+        },
+        {
+          title: 'More from Vision',
+          items: [
+            { text: 'Apple Vision Pro Siport', link:'#macSuport' },
+            { text: 'AppleCare+', link:'#appleCare' },
+          ]
+        },
+      ]
+    },
+    {
+      text: 'AirPOds',
+      link: '#airPods',
+      items: [
+        {
+          title: 'Explore AirPods',
+          items: [
+            { text: 'Explore All AirPods', link:'#exploreAllMac' },
+            { text: 'AirPOds Pro 2nd generation', link:'#macAir' },
+            { text: 'AirPods 2nd generation ', link:'#macbookPro' },
+            { text: 'AirPods 3rd generation ', link:'#macbookPro' },
+            { text: 'AirPods Max', link:'#imac' },
+          ]
+        },
+        {
+          title: 'Shop AirPods',
+          items: [
+            { text: 'Shop Airpods', link:'#shopMac' },
+            { text: 'AirPOds Accesories', link:'#macAccesories' },
+          ]
+        },
+        {
+          title: 'More from AirPods',
+          items: [
+            { text: 'AirPods Support', link:'#macSuport' },
+            { text: 'AppleCare+ for Headphones', link:'#appleCare' },
+            { text: 'Apple Music', link:'#macSonoma' },
+
+          ]
+        },
+      ]
+    },
+    {
+      text: 'TV & Home',
+      link: '#tvHome',
+      items: [
+        {
+          title: 'Explore TV & Home',
+          items: [
+            { text: 'Explore TV & Home', link:'#exploreAllMac' },
+            { text: 'Apple TV 4K', link:'#macAir' },
+            { text: 'HomePod ', link:'#macbookPro' },
+            { text: 'HomePod Mini ', link:'#macbookPro' },
+          ]
+        },
+        {
+          title: 'Shop TV & Home',
+          items: [
+            { text: 'Shop Apple TV 4k', link:'#shopMac' },
+            { text: 'Shop HomePod', link:'#macAccesories' },
+            { text: 'Shop HomePod mini', link:'#macAccesories' },
+            { text: 'Shop Siri Remote', link:'#macAccesories' },
+            { text: 'Tv & Home Accesories', link:'#macAccesories' },
+          ]
+        },
+        {
+          title: 'More from TV & Home',
+          items: [
+            { text: 'Apple Tv Support', link:'#macSuport' },
+            { text: 'HomePod Support', link:'#appleCare' },
+            { text: 'AppleCare+', link:'#macSonoma' },
+            { text: 'Apple TV app', link:'#macSonoma' },
+            { text: 'Apple TV+', link:'#macSonoma' },
+            { text: 'Home app', link:'#macSonoma' },
+            { text: 'Siri', link:'#macSonoma' },
+            { text: 'AirPlay', link:'#macSonoma' },
+
+          ]
+        },
+      ]
+    },
+    {
+      text: 'Entertainment',
+      link: '#entertainment',
+      items: [
+        {
+          title: 'Explore Entertainment',
+          items: [
+            { text: 'Explore Entertainment', link:'#exploreAllMac' },
+            { text: 'Apple One', link:'#macAir' },
+            { text: 'Apple Tv+ ', link:'#macbookPro' },
+            { text: 'Apple Music ', link:'#macbookPro' },
+            { text: 'Apple Arcade ', link:'#macbookPro' },
+            { text: 'Apple Fitness+ ', link:'#macbookPro' },
+            { text: 'Apple News+ ', link:'#macbookPro' },
+            { text: 'Apple Podcast ', link:'#macbookPro' },
+            { text: 'Apple Books ', link:'#macbookPro' },
+            { text: 'App Store ', link:'#macbookPro' },
+          ]
+        },
+        {
+          title: 'Support',
+          items: [
+            { text: 'apple TV+ Support', link:'#shopMac' },
+            { text: 'Apple Music Support', link:'#macAccesories' },
+          ]
+        },
+      ]
+    },
+    {
+      text: 'Accessories',
+      link: '#accessories',
+      items: [
+        {
+          title: 'Shop Accessories',
+          items: [
+            { text: 'Shop All Accessories', link:'#exploreAllMac' },
+            { text: 'Mac', link:'#macAir' },
+            { text: 'iPad ', link:'#macbookPro' },
+            { text: 'iPhone ', link:'#macbookPro' },
+            { text: 'Apple Watch ', link:'#macbookPro' },
+            { text: 'Apple Vision Pro ', link:'#macbookPro' },
+            { text: 'AirPods', link:'#macbookPro' },
+            { text: 'Tv & Home ', link:'#macbookPro' },
+          ]
+        },
+        {
+          title: 'Explore Accessories',
+          items: [
+            { text: 'Made by Apple', link:'#shopMac' },
+            { text: 'Beats by Dr.Dre', link:'#macAccesories' },
+            { text: 'AirTag', link:'#macAccesories' },
+          ]
+        },
+      ]
+    },
+    {
+      text: 'Support',
+      link: '#support',
+      items: [
+        {
+          title: 'Explore Support',
+          items: [
+            { text: 'iPhone', link:'#exploreAllMac' },
+            { text: 'Mac', link:'#macAir' },
+            { text: 'Watch ', link:'#macbookPro' },
+            { text: 'Apple Vision Pro ', link:'#macbookPro' },
+            { text: 'AirPods ', link:'#macbookPro' },
+            { text: 'Music ', link:'#macbookPro' },
+            { text: 'TV ', link:'#macbookPro' },
+          ]
+        },
+        {
+          title: 'Get Help',
+          items: [
+            { text: 'Community', link:'#shopMac' },
+            { text: 'Check Coverage', link:'#macAccesories' },
+            { text: 'Repair', link:'#macAccesories' },
+            { text: 'Contact Us', link:'#macAccesories' },
+          ]
+        },
+        {
+          title: 'Helpful Topics',
+          items: [
+            { text: 'Get AppleCare+', link:'#macSuport' },
+            { text: 'Apple ID & PAssword', link:'#appleCare' },
+            { text: 'AppleCare+', link:'#macSonoma' },
+            { text: 'Apple TV app', link:'#macSonoma' },
+            { text: 'Apple TV+', link:'#macSonoma' },
+            { text: 'Home app', link:'#macSonoma' },
+            { text: 'Siri', link:'#macSonoma' },
+            { text: 'AirPlay', link:'#macSonoma' },
+
+          ]
+        },
+      ]
+    },
+
+  ]
+
+
+//Header
+.header
+  .header__content
+    .container
+      .header__wrapper
+        //header__logo
+        a.header__logo(href='#')
+          img.header__logo__el(src='assets/img/logo/apple.svg' alt='Apple Logo')/
+
+        //header__menu
+        .header__menu
+          ul.header__nav
+            each navItem in dataHeader
+              li.header__nav__item(class=navItem.items ? 'has-mega-menu' : '')
+                a.header__nav__link(href=navItem.link)
+                  | !{navItem.text}
+                if navItem.items
+                  .mega-menu
+                    .mega-menu__box
+                      each megaSection in navItem.items
+                        .mega-menu__section
+                          h3.mega-menu__title
+                            | !{megaSection.title}
+                          ul.mega-menu__list
+                            each subItem in megaSection.items
+                              li.mega-menu__item
+                                a.mega-menu__link(href=subItem.link)
+                                  | !{subItem.text}
+                      img.arrow-prev(src="assets/img/icon/arrow.svg", alt="icon prev")
+
+        //header__icon
+        .header__icon
+          .header__search.js-toggle-search
+            img.header__search__el(src='assets/img/icon/search.png' alt='search')/
+          //burger-menu
+          button.burger-menu.js-burger-menu(type='button')
+            span.burger-menu__bar
+            span.burger-menu__bar
+
+      // Pindahkan header__form di luar header__wrapper
+      .header__form
+        form.header__form__search(action="#")
+        input.search-input(type="text" name="search" placeholder="Telusuri apple.com")
+        img.search-icon(src="assets/img/icon/search.png", alt="icon search")

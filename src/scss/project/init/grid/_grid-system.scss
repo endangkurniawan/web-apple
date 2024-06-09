@@ -1,0 +1,27 @@
+/* ==========================================================================
+   Grid System
+   ========================================================================== */
+
+.container {
+  width: 100%;
+  max-width: $mw-container;
+  margin-left: auto;
+  margin-right: auto;
+  @include mq(1504px) {
+    max-width: initial;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  @include small {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  @include medium {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+}
+
+.main-site {
+  width: 100%;
+}

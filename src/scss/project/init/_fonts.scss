@@ -1,0 +1,17 @@
+/* ==========================================================================
+ Init: Fonts
+ ========================================================================== */
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("../fonts/HelveticaNeue-MediumExt.eot");
+  src: url("../fonts/HelveticaNeue-MediumExt.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/HelveticaNeue-MediumExt.woff2") format("woff2"),
+    url("../fonts/HelveticaNeue-MediumExt.woff") format("woff"),
+    url("../fonts/HelveticaNeue-MediumExt.ttf") format("truetype"),
+    url("../fonts/HelveticaNeue-MediumExt.svg#HelveticaNeue-MediumExt")
+      format("svg");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}

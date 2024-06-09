@@ -1,0 +1,105 @@
+/* ==========================================================================
+Layout: Example
+========================================================================== */
+
+.example {
+  $e: &;
+  padding: 80px 0;
+  @include large {
+    padding: 64px 0;
+  }
+  @include medium {
+    padding: 56px 0 48px;
+  }
+  @include small {
+    padding: 48px 0 32px;
+  }
+  &__head {
+    margin-bottom: 64px;
+    @include large {
+      margin-bottom: 56px;
+    }
+    @include medium {
+      margin-bottom: 48px;
+    }
+  }
+  &__title {
+    color: color(primary);
+    margin-bottom: 24px;
+    transition: all .75s ease 0s;
+    .main-site--hide & {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    @include medium {
+      @include font-size(h2);
+      margin-bottom: 16px;
+    }
+  }
+  &__desc {
+    margin-bottom: 0;
+    transition: all .75s ease .35s;
+    .main-site--hide & {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+  }
+  &__subtitle {
+    margin-bottom: 8px;
+    transition: all .75s ease .7s;
+    .main-site--hide & {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    @include medium {
+      @include font-size(h4);
+      margin-bottom: 0;
+    }
+  }
+  &__body {
+    @include clearfix;
+    margin-left: -12px;
+    margin-right: -12px;
+    transition: all .75s ease .8s;
+    .main-site--hide & {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    @include medium {
+      padding: 32px;
+      margin-left: -32px;
+      margin-right: -32px;
+      @include scroll(x);
+    }
+    @include small {
+      padding: 32px 24px;
+      margin-left: -24px;
+      margin-right: -24px;
+    }
+  }
+  .item {
+    float: left;
+    width: 33.3333333%;
+    padding: 12px;
+    @include medium {
+      width: auto;
+      max-width: 340px;
+      float: none;
+      display: inline-block;
+      vertical-align: top;
+      white-space: normal;
+      padding: 0;
+      margin-right: 24px;
+      &:last-child {
+        margin-right: 32px;
+      }
+    }
+    @include small {
+      max-width: 320px;
+      margin-right: 16px;
+      &:last-child {
+        margin-right: 24px;
+      }
+    }
+  }
+}
