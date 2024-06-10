@@ -25,11 +25,11 @@
     &__item {
       padding-bottom: 10px;
       & span {
-        @include font-size(small);
+        @include font-size(x-small);
         color: color(tertiary);
       }
       & a {
-        @include font-size(small);
+        @include font-size(x-small);
         color: color(primary);
       }
     }
@@ -40,12 +40,28 @@
     flex-wrap: nowrap;
     padding-top: 20px;
 
+    @include medium {
+      display: block;
+      padding-top: 36px;
+    }
     &__box {
       flex-basis: 25%;
     }
 
     &__item {
       padding-bottom: 24px;
+      @include medium {
+        width: 100%;
+        @include medium {
+          &::after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 1px;
+            background-color: color(tertiary);
+          }
+        }
+      }
     }
 
     &__title {
@@ -58,7 +74,7 @@
 
     &__title,
     &__link {
-      @include font-size(small);
+      @include font-size(x-small);
       color: color(tertiary);
     }
 
@@ -66,6 +82,9 @@
       list-style: none;
       margin: 0;
       padding: 0;
+      @include medium {
+        display: none;
+      }
     }
 
     &__items {
@@ -76,9 +95,27 @@
   &__copyright {
     padding: 36px 0 12px;
 
+    &__txt {
+      &::after {
+        content: "";
+        width: 100%;
+        height: 1px;
+        background-color: color(tertiary);
+        display: block;
+        margin-bottom: 16px;
+        @include medium {
+          display: none;
+        }
+      }
+    }
+
     &__desc {
-      @include font-size(small);
+      @include font-size(x-small);
       color: color(tertiary);
+      & a {
+        color: blue;
+        opacity: 0.8;
+      }
     }
 
     &__bottom {
@@ -87,9 +124,12 @@
 
     &__locale {
       float: right;
+      @include medium {
+        float: none;
+      }
       #{$ft}__locale__link {
         text-decoration: none;
-        @include font-size(small);
+        @include font-size(x-small);
         color: color(tertiary);
       }
     }
@@ -98,12 +138,15 @@
       display: flex;
       align-items: center;
       gap: 30px;
+      @include medium {
+        display: block;
+      }
     }
 
     #{$ft}__legal {
       &__txt {
         margin: 0;
-        @include font-size(small);
+        @include font-size(x-small);
         color: color(tertiary);
       }
 
@@ -112,6 +155,7 @@
         padding: 0;
         margin: 0;
         display: flex;
+        align-items: center;
         gap: 10px;
       }
 
@@ -119,7 +163,7 @@
         position: relative;
         padding-inline-end: 20px;
         color: color(tertiary);
-        @include font-size(small);
+        @include font-size(x-small);
         &::after {
           position: absolute;
           content: "";
