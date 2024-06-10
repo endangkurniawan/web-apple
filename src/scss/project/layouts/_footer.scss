@@ -51,21 +51,55 @@
     &__item {
       padding-bottom: 24px;
       @include medium {
+        padding: 0;
         width: 100%;
-        @include medium {
-          &::after {
-            content: "";
-            display: block;
-            width: 100%;
-            height: 1px;
-            background-color: color(tertiary);
-          }
+        &::after {
+          content: "";
+          display: block;
+          width: 100%;
+          height: 1px;
+          background-color: color(tertiary);
+          opacity: 0.6;
         }
       }
     }
 
     &__title {
       margin-bottom: 10px;
+      @include medium {
+        cursor: pointer;
+        padding-top: 26px;
+        position: relative;
+        margin: 0;
+        padding: 10px 0;
+        &::after {
+          content: "";
+          display: block;
+          width: 12px;
+          height: 12px;
+          background-image: url(../img/icon/chevron-arrow.svg);
+          background-repeat: no-repeat;
+          background-size: contain;
+          right: 0;
+          bottom: 12px;
+          transform: rotateX(180deg);
+          position: absolute;
+          transition: transform 0.3s ease;
+        }
+      }
+    }
+    &--active {
+      #{$ft} {
+        &__nav__title::after {
+          transform: none;
+          transition: transform 0.3s ease;
+        }
+        &__nav__items {
+          opacity: 1;
+          transform: none;
+          transition-delay: 200ms;
+        }
+      }
     }
 
     &__link {
@@ -74,7 +108,7 @@
 
     &__title,
     &__link {
-      @include font-size(x-small);
+      @include font-size(small);
       color: color(tertiary);
     }
 
@@ -89,6 +123,11 @@
 
     &__items {
       margin-bottom: 10px;
+      @include medium {
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: all 0.3s ease;
+      }
     }
   }
 
@@ -114,7 +153,7 @@
       color: color(tertiary);
       & a {
         color: blue;
-        opacity: 0.8;
+        opacity: 0.6;
       }
     }
 

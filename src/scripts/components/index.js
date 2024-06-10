@@ -5,5 +5,6 @@
 
 import Header from "./Header";
 import WindowResize from "./WindowResize";
+import Footer from "./Footer";
 
-export { Header, WindowResize };
+export { Header, WindowResize, Footer };
