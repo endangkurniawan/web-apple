@@ -104,6 +104,22 @@
 
     &__link {
       text-decoration: none;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 1px;
+        background-color: color(primary);
+        left: 0;
+        bottom: -4px;
+        transition: width 0.3s ease;
+      }
+      &:hover {
+        &::after {
+          width: 100%;
+        }
+      }
     }
 
     &__title,
@@ -196,6 +212,9 @@
         display: flex;
         align-items: center;
         gap: 10px;
+        @include small {
+          display: inline-block;
+        }
       }
 
       &__item {
@@ -203,6 +222,10 @@
         padding-inline-end: 20px;
         color: color(tertiary);
         @include font-size(x-small);
+        @include small {
+          display: inline-block;
+          padding-inline-end: 9px;
+        }
         &::after {
           position: absolute;
           content: "";
@@ -212,10 +235,6 @@
           width: 1px;
           background-color: color(tertiary);
         }
-      }
-
-      &__link {
-        text-decoration: none;
       }
     }
   }
