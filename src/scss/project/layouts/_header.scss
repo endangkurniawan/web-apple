@@ -14,13 +14,10 @@
   }
   &__wrapper {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     user-select: none;
     gap: 0 32px;
-    @include medium {
-      justify-content: space-between;
-    }
   }
   &__logo {
     height: 24px;
@@ -64,6 +61,7 @@
   &__nav {
     list-style: none;
     margin: 0;
+    padding: 0;
     display: flex;
     gap: 0 32px;
     @include large {
@@ -110,17 +108,21 @@
     position: absolute;
     top: 34px;
     left: 0;
-    background-color: color(primary);
-    padding: 20px 0px 40px 160px;
+    background-color: color(black, 1);
+    padding: 20px 0px 40px 0;
     width: 100%;
     box-shadow: 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 999;
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.3s ease, visibility 0.3s ease;
+
     &:hover {
       visibility: visible;
       opacity: 1;
+      .header {
+        background-color: black;
+      }
     }
     @include medium {
       height: 100%;
@@ -133,6 +135,10 @@
     &__box {
       display: flex;
       gap: 40px;
+      width: 100%;
+      max-width: $mw-container;
+      margin-left: auto;
+      margin-right: auto;
       @include medium {
         display: block;
       }
@@ -141,6 +147,7 @@
     &__section {
       flex-direction: 1;
       padding: 8px 12px;
+
       @include medium {
         padding: 10px 0;
         &:nth-child(2),
@@ -160,7 +167,7 @@
     }
     &__title {
       @include font-size(small);
-      color: color(tertiary);
+      color: color(white);
       margin-bottom: 10px;
       @include medium {
         margin-bottom: 5px;
