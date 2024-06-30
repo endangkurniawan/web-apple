@@ -117,13 +117,6 @@
     opacity: 0;
     transition: opacity 0.3s ease, visibility 0.3s ease;
 
-    &:hover {
-      visibility: visible;
-      opacity: 1;
-      .header {
-        background-color: black;
-      }
-    }
     @include medium {
       height: 100%;
       background-color: black;
@@ -167,7 +160,7 @@
     }
     &__title {
       @include font-size(small);
-      color: color(white);
+      color: color(grey, 0);
       margin-bottom: 10px;
       @include medium {
         margin-bottom: 5px;
