@@ -8,7 +8,6 @@
   const dataHeader = [
     {
       text: 'Store',
-      link: '#store',
       items: [
         {
           title: 'Shop',
@@ -45,7 +44,6 @@
     },
     {
       text: 'Mac',
-      link: '#mac',
       items: [
         {
           title: 'Explore Mac',
@@ -86,7 +84,6 @@
     },
     {
       text: 'iPad',
-      link: '#iPad',
       items: [
         {
           title: 'Explore iPad',
@@ -123,7 +120,6 @@
     },
     {
       text: 'iPhone',
-      link: '#iPhone',
       items: [
         {
           title: 'Explore iPhone',
@@ -163,7 +159,6 @@
     },
     {
       text: 'Watch',
-      link: '#watch',
       items: [
         {
           title: 'Explore Watch',
@@ -201,7 +196,6 @@
     },
     {
       text: 'Vision',
-      link: '#vision',
       items: [
         {
           title: 'Explore Vision',
@@ -229,7 +223,6 @@
     },
     {
       text: 'AirPOds',
-      link: '#airPods',
       items: [
         {
           title: 'Explore AirPods',
@@ -261,7 +254,6 @@
     },
     {
       text: 'TV & Home',
-      link: '#tvHome',
       items: [
         {
           title: 'Explore TV & Home',
@@ -300,7 +292,6 @@
     },
     {
       text: 'Entertainment',
-      link: '#entertainment',
       items: [
         {
           title: 'Explore Entertainment',
@@ -328,7 +319,6 @@
     },
     {
       text: 'Accessories',
-      link: '#accessories',
       items: [
         {
           title: 'Shop Accessories',
@@ -355,7 +345,6 @@
     },
     {
       text: 'Support',
-      link: '#support',
       items: [
         {
           title: 'Explore Support',
@@ -406,13 +395,12 @@
         //header__logo
         a.header__logo(href='#')
           img.header__logo__el(src='assets/img/logo/apple.svg' alt='Apple Logo')/
-
         //header__menu
         .header__menu
           ul.header__nav
             each navItem in dataHeader
               li.header__nav__item(class=navItem.items ? 'has-mega-menu' : '')
-                a.header__nav__link(href=navItem.link)
+                button.header__nav__button
                   | !{navItem.text}
                 if navItem.items
                   .mega-menu
