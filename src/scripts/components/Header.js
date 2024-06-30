@@ -1,10 +1,3 @@
-/* ------------------------------------------------------------------------------
-@name: Header
-@description: Header js
---------------------------------------------------------------------------------- */
-
-import { Scrolllable } from "utilities";
-
 const Header = (() => {
   // - handleSearchToggle
   const handleSearchToggle = () => {
@@ -26,17 +19,32 @@ const Header = (() => {
   const handleMegamenu = () => {
     let isMegamenuVisible = false;
 
-    $(".header__nav__item").on("click", () => {
-      if (isMegamenuVisible) {
-        $(".mega-menu").css("display", "block");
-        isMegamenuVisible = true;
+    const showMegamenu = (targetMenu) => {
+      $(".mega-menu").hide(); // Hide all megamenus first
+      targetMenu.css("display", "block"); // Show the target megamenu
+      isMegamenuVisible = true;
+    };
+
+    const hideMegamenu = () => {
+      $(".mega-menu").hide();
+      isMegamenuVisible = false;
+    };
+
+    $(".header__nav__item.has-mega-menu").on("click", function (e) {
+      if ($(window).width() <= 992) {
+        const megamenu = $(this).find(".mega-menu");
+        if (isMegamenuVisible && megamenu.is(":visible")) {
+          hideMegamenu();
+        } else {
+          showMegamenu(megamenu);
+        }
       }
     });
 
-    $(".arrow-prev").on("click", () => {
-      $(".mega-menu").hide();
-      $(".js-burger-menu").addClass("show");
-      isMegamenuVisible = false;
+    $(".arrow-prev").on("click", (e) => {
+      e.stopPropagation();
+      hideMegamenu();
+      $(".js-burger-menu").removeClass("show");
     });
   };
 
