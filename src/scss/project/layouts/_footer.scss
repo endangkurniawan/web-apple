@@ -5,7 +5,7 @@
   left: 0;
   width: 100%;
   background-color: rgb(245, 245, 247);
-  &__title {
+  &__metadata {
     padding: 18px 0 12px;
     position: relative;
     &::after {
@@ -44,7 +44,7 @@
       display: block;
       padding-top: 36px;
     }
-    &__box {
+    &__section {
       flex-basis: 25%;
     }
 
@@ -65,8 +65,11 @@
     }
 
     &__title {
+      @include font-size(small);
+      font-weight: normal;
       margin-bottom: 10px;
       color: color(black, 2);
+      font-weight: bold;
       @include medium {
         cursor: pointer;
         padding-top: 26px;
@@ -95,15 +98,37 @@
           transform: none;
           transition: transform 0.3s ease;
         }
-        &__nav__items {
+        &__menu__item {
           opacity: 1;
           transform: none;
           transition-delay: 200ms;
         }
       }
     }
+  }
+
+  &__menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    @include medium {
+      display: none;
+    }
+    &__item {
+      margin-bottom: 10px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      @include medium {
+        padding-left: 12px;
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: all 0.3s ease;
+      }
+    }
 
     &__link {
+      @include font-size(small);
       text-decoration: none;
       position: relative;
       color: color(black, 3);
@@ -123,37 +148,11 @@
         }
       }
     }
-
-    &__title,
-    &__link {
-      @include font-size(small);
-      font-weight: normal;
-    }
-
-    &__list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      @include medium {
-        display: none;
-      }
-    }
-
-    &__items {
-      margin-bottom: 10px;
-      @include medium {
-        padding-left: 12px;
-        opacity: 0;
-        transform: translateY(-20px);
-        transition: all 0.3s ease;
-      }
-    }
   }
 
   &__copyright {
     padding: 36px 0 12px;
-
-    &__txt {
+    &__top {
       &::after {
         content: "";
         width: 100%;
@@ -177,37 +176,37 @@
     }
 
     &__bottom {
-      @include clearfix;
+      display: flex;
+      align-items: center;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      @include medium {
+        display: block;
+      }
     }
 
     &__locale {
-      float: right;
       @include medium {
-        float: none;
+        margin-bottom: 8px;
       }
       #{$ft}__locale__link {
         text-decoration: none;
         @include font-size(x-small);
         color: color(tertiary);
+        @include medium {
+          @include font-size(small);
+          color: color(primary);
+        }
       }
     }
 
-    &__legal {
+    &__page-links {
       display: flex;
       align-items: center;
       gap: 30px;
       @include medium {
         display: block;
       }
-    }
-
-    #{$ft}__legal {
-      &__txt {
-        margin: 0;
-        @include font-size(x-small);
-        color: color(tertiary);
-      }
-
       &__list {
         list-style: none;
         padding: 0;
@@ -219,25 +218,54 @@
           display: inline-block;
         }
       }
-
       &__item {
         position: relative;
-        padding-inline-end: 20px;
+        padding-right: 8px;
+        margin-right: 8px;
         color: color(tertiary);
         @include font-size(x-small);
         @include small {
           display: inline-block;
-          padding-inline-end: 9px;
         }
         &::after {
           position: absolute;
           content: "";
-          right: 4px;
-          top: 4px;
-          height: 10px;
+          right: 0;
+          top: 2px;
+          height: 12px;
           width: 1px;
           background-color: color(tertiary);
         }
+      }
+      &__link {
+        text-decoration: none;
+        @include font-size(small);
+        color: color(primary);
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          width: 0;
+          height: 1px;
+          background-color: color(primary);
+          left: 0;
+          bottom: -4px;
+          transition: width 0.3s ease;
+        }
+        &:hover {
+          &::after {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    &__text {
+      margin: 0;
+      @include font-size(x-small);
+      color: color(tertiary);
+      @include medium {
+        @include font-size(small);
       }
     }
   }

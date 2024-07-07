@@ -35,247 +35,246 @@
 //Footer
 .footer
   .container
-    .footer__wrapper
-      .footer__title
-        ul.footer__title__list
-          each item in footerSectionData
-            li.footer__title__item
-              span= item.txt
-              if item.link
-                ='\n'
-                a(href=item.link) #{item.linkText}
+    .footer__metadata
+      ul.footer__metadata__list
+        each item in footerSectionData
+          li.footer__metadata__item
+            span= item.txt
+            if item.link
+              ='\n'
+              a(href=item.link) #{item.linkText}
 
 
-      .footer__nav.js-footer-accordion
-        .footer__nav__box
-          .footer__nav__item
-            h3.footer__nav__title  Shop and Learn
-            ul.footer__nav__list
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Store
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Mac
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") iPad
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") iPhone
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Watch
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Vision
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") AirPods
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") TV & Home
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") AirTag
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Accesories
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Gift Cards
-          .footer__nav__item
-            h3.footer__nav__title  Apple Wallet
-            ul.footer__nav__list
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Wallet
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Apple Card
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Apple Pay
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Apple Cash
-        .footer__nav__box
-          .footer__nav__item
-            h3.footer__nav__title  Account
-            ul.footer__nav__list
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Manage Your Apple ID
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Apple Store Account
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") iCloud.com
-          .footer__nav__item
-            h3.footer__nav__title Entertaintment
-            ul.footer__nav__list
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Apple One
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Apple Tv+
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Apple Music
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Apple Arcade
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Apple Fitness+
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Apple News+
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Apple Podcst
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Apple Books
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Apple Store
-        .footer__nav__box
-          .footer__nav__item
-            h3.footer__nav__title  Apple Store
-            ul.footer__nav__list
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Find a Store
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Genius Bar
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Todat at Apple
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Group Reservations
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Apple Camp
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Apple Store App
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Certified Refurbished
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Apple Trade in
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Financing
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Carries Deals at Apple
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Order Status
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Shoping Help
-        .footer__nav__box
-          .footer__nav__item
-            h3.footer__nav__title  For Business
-            ul.footer__nav__list
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Apple and Business
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Shop for Business
-          .footer__nav__item
-            h3.footer__nav__title For Education
-            ul.footer__nav__list
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Apple and Education
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Shop for K-12
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Shop for College
-          .footer__nav__item
-            h3.footer__nav__title For Healthcare
-            ul.footer__nav__list
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Apple in Healthcare
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Health on AppleWatch
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Health Records on iPhone
-          .footer__nav__item
-            h3.footer__nav__title For Goverment
-            ul.footer__nav__list
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Shop for Goverment
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Shop for Veterans and Military
-        .footer__nav__box
-          .footer__nav__item
-            h3.footer__nav__title  Apple Values
-            ul.footer__nav__list
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Accesibility
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Education
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Environment
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Inclusion and Diversity
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Privacy
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Racial Equity and Justice
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Supply Chain
-          .footer__nav__item
-            h3.footer__nav__title About Apple
-            ul.footer__nav__list
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Newsroom
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Apple Leadership
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Carrieer Oportunities
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Investor
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Ethics & Compliance
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Events
-              li.footer__nav__items
-                ='\n'
-                a.footer__nav__link(href="#") Contact Apple
-      .footer__copyright
-        .footer__copyright__txt
+    .footer__nav.js-footer-accordion
+      .footer__nav__section
+        .footer__nav__item
+          h3.footer__nav__title  Shop and Learn
+          ul.footer__menu
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Store
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Mac
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") iPad
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") iPhone
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Watch
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Vision
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") AirPods
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") TV & Home
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") AirTag
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Accesories
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Gift Cards
+        .footer__nav__item
+          h3.footer__nav__title  Apple Wallet
+          ul.footer__menu
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Wallet
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Apple Card
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Apple Pay
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Apple Cash
+      .footer__nav__section
+        .footer__nav__item
+          h3.footer__nav__title  Account
+          ul.footer__menu
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Manage Your Apple ID
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Apple Store Account
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") iCloud.com
+        .footer__nav__item
+          h3.footer__nav__title Entertaintment
+          ul.footer__menu
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Apple One
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Apple Tv+
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Apple Music
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Apple Arcade
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Apple Fitness+
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Apple News+
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Apple Podcst
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Apple Books
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Apple Store
+      .footer__nav__section
+        .footer__nav__item
+          h3.footer__nav__title  Apple Store
+          ul.footer__menu
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Find a Store
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Genius Bar
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Todat at Apple
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Group Reservations
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Apple Camp
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Apple Store App
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Certified Refurbished
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Apple Trade in
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Financing
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Carries Deals at Apple
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Order Status
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Shoping Help
+      .footer__nav__section
+        .footer__nav__item
+          h3.footer__nav__title  For Business
+          ul.footer__menu
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Apple and Business
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Shop for Business
+        .footer__nav__item
+          h3.footer__nav__title For Education
+          ul.footer__menu
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Apple and Education
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Shop for K-12
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Shop for College
+        .footer__nav__item
+          h3.footer__nav__title For Healthcare
+          ul.footer__menu
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Apple in Healthcare
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Health on AppleWatch
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Health Records on iPhone
+        .footer__nav__item
+          h3.footer__nav__title For Goverment
+          ul.footer__menu
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Shop for Goverment
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Shop for Veterans and Military
+      .footer__nav__section
+        .footer__nav__item
+          h3.footer__nav__title  Apple Values
+          ul.footer__menu
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Accesibility
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Education
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Environment
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Inclusion and Diversity
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Privacy
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Racial Equity and Justice
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Supply Chain
+        .footer__nav__item
+          h3.footer__nav__title About Apple
+          ul.footer__menu
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Newsroom
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Apple Leadership
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Carrieer Oportunities
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Investor
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Ethics & Compliance
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Events
+            li.footer__menu__item
+              ='\n'
+              a.footer__menu__link(href="#") Contact Apple
+    .footer__copyright
+        .footer__copyright__top
           p.footer__copyright__desc
             | More ways to shop:
             ='\n'
@@ -290,27 +289,27 @@
           .footer__copyright__locale
             a.footer__locale__link(href="#")
               | United States
-          .footer__copyright__legal
-            p.footer__legal__txt
+          .footer__copyright__page-links
+            p.footer__copyright__text
               | Copyright &#169; 2024 Apple Inc. All rights reserved.
-            ul.footer__legal__list
-              li.footer__legal__item
+            ul.footer__copyright__page-links__list
+              li.footer__copyright__page-links__item
                 ='\n'
-                a.footer__nav__link(href="#")
+                a.footer__copyright__page-links__link(href="#")
                   | Privacy Policy
-              li.footer__legal__item
+              li.footer__copyright__page-links__item
                 ='\n'
-                a.footer__nav__link(href="#")
+                a.footer__copyright__page-links__link(href="#")
                   | Terms of Use
-              li.footer__legal__item
+              li.footer__copyright__page-links__item
                 ='\n'
-                a.footer__nav__link(href="#")
+                a.footer__copyright__page-links__link(href="#")
                   | Sales and Refunds
-              li.footer__legal__item
+              li.footer__copyright__page-links__item
                 ='\n'
-                a.footer__nav__link(href="#")
+                a.footer__copyright__page-links__link(href="#")
                   | Legal
-              li.footer__legal__item
+              li.footer__copyright__page-links__item
                 ='\n'
-                a.footer__nav__link(href="#")
+                a.footer__copyright__page-links__link(href="#")
                   | Site Map

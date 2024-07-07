@@ -7,10 +7,10 @@
   max-width: $mw-container;
   margin-left: auto;
   margin-right: auto;
-  @include mq(1344px) {
+  @include mq(1068px) {
     max-width: initial;
-    padding-left: 32px;
-    padding-right: 32px;
+    padding-left: 22px;
+    padding-right: 22px;
   }
   @include small {
     padding-left: 24px;

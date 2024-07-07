@@ -15,7 +15,7 @@ const Footer = (() => {
         // $(".footer__nav__item")
         //   .not(_navWrapper)
         //   .removeClass("footer__nav--active")
-        //   .find(".footer__nav__list")
+        //   .find(".footer__menu")
         //   .slideUp(300);
         // $(".footer__nav__item")
         //   .not(_navWrapper)
@@ -24,11 +24,11 @@ const Footer = (() => {
 
         // Handle item yang diklik
         if (_this.hasClass("active")) {
-          _navWrapper.find(".footer__nav__list").slideUp(300);
+          _navWrapper.find(".footer__menu").slideUp(300);
           _navWrapper.removeClass("footer__nav--active");
           _this.removeClass("active");
         } else {
-          _navWrapper.find(".footer__nav__list").slideDown(300);
+          _navWrapper.find(".footer__menu").slideDown(300);
           _navWrapper.addClass("footer__nav--active");
           _this.addClass("active");
         }

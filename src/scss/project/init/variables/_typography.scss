@@ -2,7 +2,7 @@
    Variable: Typography
    ========================================================================== */
 
-$font-primary: "Helvetica Neue", sans-serif;
+$font-primary: "SFProText", sans-serif;
 
 // Font
 $font: (
@@ -48,8 +48,8 @@ $font: (
     line-height: 1.4rem,
   ),
   weight: (
-    light: 300,
     regular: 400,
+    medium: 500,
     bold: 700,
   ),
 );
