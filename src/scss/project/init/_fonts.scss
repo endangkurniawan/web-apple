@@ -28,3 +28,18 @@
   font-style: normal;
   font-display: swap;
 }
+
+@font-face {
+  font-family: "SFProText";
+  src: url("../../../fonts/SFProText-Semibold.eot");
+  src: url("../../../fonts/SFProText-Semibold.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../../fonts/SFProText-Semibold.woff2") format("woff2"),
+    url("../../../fonts/SFProText-Semibold.woff") format("woff"),
+    url("../../../fonts/SFProText-Semibold.ttf") format("truetype"),
+    url("../../../fonts/SFProText-Semibold.svg#SFProText-Semibold")
+      format("svg");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}

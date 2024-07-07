@@ -167,7 +167,7 @@
     }
 
     &__desc {
-      @include font-size(x-small);
+      @include font-size(small);
       color: color(tertiary);
       & a {
         color: blue;
@@ -191,10 +191,9 @@
       }
       #{$ft}__locale__link {
         text-decoration: none;
-        @include font-size(x-small);
+        @include font-size(small);
         color: color(tertiary);
         @include medium {
-          @include font-size(small);
           color: color(primary);
         }
       }
@@ -262,11 +261,8 @@
 
     &__text {
       margin: 0;
-      @include font-size(x-small);
+      @include font-size(small);
       color: color(tertiary);
-      @include medium {
-        @include font-size(small);
-      }
     }
   }
 }
