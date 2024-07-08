@@ -5,7 +5,7 @@
 */
 
 // --- components
-import { Header } from "components";
+import { Header, Footer } from "components";
 
 const WindowResize = (() => {
   let _timeout = false,
@@ -33,6 +33,7 @@ const WindowResize = (() => {
       _timeout = false;
       $("body").removeClass("hold-transition");
       Header.hideMenu();
+      Footer.setPaddingBottomMain();
     }
   };
 

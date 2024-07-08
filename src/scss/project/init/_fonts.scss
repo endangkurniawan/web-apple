@@ -1,15 +1,15 @@
 /* ==========================================================================
- Init: Fonts
+ Fonts
  ========================================================================== */
+
 @font-face {
   font-family: "SFProText";
-  src: url("../../../fonts/SFProText-Regular.eot");
-  src: url("../../../fonts/SFProText-Regular.eot?#iefix")
-      format("embedded-opentype"),
-    url("../../../fonts/SFProText-Regular.woff2") format("woff2"),
-    url("../../../fonts/SFProText-Regular.woff") format("woff"),
-    url("../../../fonts/SFProText-Regular.ttf") format("truetype"),
-    url("../../../fonts/SFProText-Regular.svg#SFProText-Regular") format("svg");
+  src: url("../fonts/SFProText-Regular.eot");
+  src: url("../fonts/SFProText-Regular.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/SFProText-Regular.woff2") format("woff2"),
+    url("../fonts/SFProText-Regular.woff") format("woff"),
+    url("../fonts/SFProText-Regular.ttf") format("truetype"),
+    url("../fonts/SFProText-Regular.svg#SFProText-Regular") format("svg");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -17,13 +17,12 @@
 
 @font-face {
   font-family: "SFProText";
-  src: url("../../../fonts/SFProText-Medium.eot");
-  src: url("../../../fonts/SFProText-Medium.eot?#iefix")
-      format("embedded-opentype"),
-    url("../../../fonts/SFProText-Medium.woff2") format("woff2"),
-    url("../../../fonts/SFProText-Medium.woff") format("woff"),
-    url("../../../fonts/SFProText-Medium.ttf") format("truetype"),
-    url("../../../fonts/SFProText-Medium.svg#SFProText-Medium") format("svg");
+  src: url("../fonts/SFProText-Medium.eot");
+  src: url("../fonts/SFProText-Medium.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/SFProText-Medium.woff2") format("woff2"),
+    url("../fonts/SFProText-Medium.woff") format("woff"),
+    url("../fonts/SFProText-Medium.ttf") format("truetype"),
+    url("../fonts/SFProText-Medium.svg#SFProText-Medium") format("svg");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -31,14 +30,12 @@
 
 @font-face {
   font-family: "SFProText";
-  src: url("../../../fonts/SFProText-Semibold.eot");
-  src: url("../../../fonts/SFProText-Semibold.eot?#iefix")
-      format("embedded-opentype"),
-    url("../../../fonts/SFProText-Semibold.woff2") format("woff2"),
-    url("../../../fonts/SFProText-Semibold.woff") format("woff"),
-    url("../../../fonts/SFProText-Semibold.ttf") format("truetype"),
-    url("../../../fonts/SFProText-Semibold.svg#SFProText-Semibold")
-      format("svg");
+  src: url("../fonts/SFProText-Semibold.eot");
+  src: url("../fonts/SFProText-Semibold.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/SFProText-Semibold.woff2") format("woff2"),
+    url("../fonts/SFProText-Semibold.woff") format("woff"),
+    url("../fonts/SFProText-Semibold.ttf") format("truetype"),
+    url("../fonts/SFProText-Semibold.svg#SFProText-Semibold") format("svg");
   font-weight: 600;
   font-style: normal;
   font-display: swap;

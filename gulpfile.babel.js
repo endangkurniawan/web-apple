@@ -69,7 +69,7 @@ const optionsHTML = {
   indent_size: 2,
   indent_char: " ",
   eol: "\n",
-  end_with_newline: true
+  end_with_newline: true,
 };
 
 // dev
@@ -84,12 +84,12 @@ const DEV_PATH = {
       order: [
         `${SRC}/scripts/vendors/jquery-3.6.0.min.js`,
         `${SRC}/scripts/vendors/owl.carousel.min.js`,
-        `${SRC}/scripts/vendors/*.js`
+        `${SRC}/scripts/vendors/*.js`,
       ],
-      concat: "vendor.js"
+      concat: "vendor.js",
     },
     watch: `${SRC}/scripts/**/*.js`,
-    main: `${SRC}/scripts/${fileName}.js`
+    main: `${SRC}/scripts/${fileName}.js`,
   },
   image: `${SRC}/images/**/*`,
   fonts: `${SRC}/fonts/**/*`,
@@ -98,7 +98,7 @@ const DEV_PATH = {
     data: `${SRC}/others/data/*.json`,
     customStyle: `${SRC}/others/css/*.css`,
     customScript: `${SRC}/others/js/*.js`,
-  }
+  },
 };
 
 // build
@@ -106,18 +106,15 @@ const BUILD_PATH = {
   view: `${BUILD}`,
   style: {
     dir: `${BUILD}/assets/css`,
-    main: `${BUILD}/assets/css/${fileName}.min.css`
+    main: `${BUILD}/assets/css/${fileName}.min.css`,
   },
   script: {
     dir: `${BUILD}/assets/js`,
-    main: `${BUILD}/assets/js/${fileName}.min.js`
+    main: `${BUILD}/assets/js/${fileName}.min.js`,
   },
   image: `${BUILD}/assets/img`,
   fonts: `${BUILD}/assets/fonts`,
-  maps: [
-    `${BUILD}/assets/css/maps`,
-    `${BUILD}/assets/js/maps`
-  ],
+  maps: [`${BUILD}/assets/css/maps`, `${BUILD}/assets/js/maps`],
   readMe: `${BUILD}/assets/**/**/*.md`,
   others: {
     forbidden: [
@@ -133,8 +130,8 @@ const BUILD_PATH = {
       `${BUILD}/assets/js`,
       `${BUILD}/assets/js/data`,
     ],
-    data: `${BUILD}/assets/js/data`
-  }
+    data: `${BUILD}/assets/js/data`,
+  },
 };
 
 // colors
@@ -143,13 +140,13 @@ const COLORS = {
   success: "green",
   build: {
     name: "magenta",
-    size: "cyan"
-  }
+    size: "cyan",
+  },
 };
 
 // renameOptions
 const renameOptions = {
-  suffix: ".min"
+  suffix: ".min",
 };
 
 /* ------------------------------------------------------------------------------
@@ -158,12 +155,11 @@ const renameOptions = {
 --------------------------------------------------------------------------------- */
 export const cleanBuild = () => {
   return del(BUILD, {
-    force: true
+    force: true,
   }).then(() => {
     console.log(c[COLORS.success].bold("--------- Build cleaned! ---------"));
   });
 };
-
 
 /* ------------------------------------------------------------------------------
 @name: cleanMaps
@@ -171,12 +167,11 @@ export const cleanBuild = () => {
 --------------------------------------------------------------------------------- */
 export const cleanMaps = () => {
   return del(BUILD_PATH.maps, {
-    force: true
+    force: true,
   }).then(() => {
     console.log(c[COLORS.success].bold("--------- Maps cleaned! ---------"));
   });
 };
-
 
 /* ------------------------------------------------------------------------------
 @name: cleanMd
@@ -184,15 +179,18 @@ export const cleanMaps = () => {
 --------------------------------------------------------------------------------- */
 export const cleanMd = () => {
   return src(BUILD_PATH.readMe)
-    .pipe(deleteFile({
-      reg: "/([/|.|\w|\s|-])*\.(?:md)/g",
-      deleteMatch: false
-    }))
+    .pipe(
+      deleteFile({
+        reg: "/([/|.|w|s|-])*.(?:md)/g",
+        deleteMatch: false,
+      })
+    )
     .on("end", () => {
-      console.log(c[COLORS.success].bold("--------- Md Files cleaned! ---------"));
+      console.log(
+        c[COLORS.success].bold("--------- Md Files cleaned! ---------")
+      );
     });
 };
-
 
 /* ------------------------------------------------------------------------------
 @name: Clean Temporary Task
@@ -206,23 +204,22 @@ export const cleanTemporary = parallel(cleanMaps, cleanMd);
 --------------------------------------------------------------------------------- */
 const server = browserSync.create();
 
-export const reload = done => {
+export const reload = (done) => {
   server.reload();
   done();
 };
 
-export const devServer = done => {
+export const devServer = (done) => {
   server.init({
     ghostMode: true,
     notify: false,
     server: {
       baseDir: BUILD_PATH.view,
     },
-    open: true
+    open: true,
   });
   done();
 };
-
 
 /* ------------------------------------------------------------------------------
 @name: CompilePug
@@ -231,16 +228,21 @@ export const devServer = done => {
 export const compilePug = () => {
   return src(DEV_PATH.view.pages)
     .pipe(pug())
-    .on("error", notify.onError(
-      (err) => {
-        return "\nProblem file : " + c[COLORS.error].bold(err.message, err.path);
-      }
-    ))
+    .on(
+      "error",
+      notify.onError((err) => {
+        return (
+          "\nProblem file : " + c[COLORS.error].bold(err.message, err.path)
+        );
+      })
+    )
     .pipe(htmlBeautify(optionsHTML))
     .pipe(dest(BUILD_PATH.view))
     .pipe(server.stream())
     .on("end", () => {
-      console.log(c[COLORS.success].bold("--------- Pug finished compiling! ---------"));
+      console.log(
+        c[COLORS.success].bold("--------- Pug finished compiling! ---------")
+      );
     });
 };
 
@@ -252,60 +254,76 @@ export const compileStyle = () => {
   return src(DEV_PATH.style)
     .pipe(errorHandle())
     .pipe(sourcemaps.init())
-    .pipe(sass().on("error", notify.onError(
-      (err) => {
-        return "\nProblem file : " + c[COLORS.error].bold(err.message, err.path);
-      }
-    )))
-    .pipe(postcss([autoprefixer()], {
-      syntax: postcssScss
-    }))
+    .pipe(
+      sass().on(
+        "error",
+        notify.onError((err) => {
+          return (
+            "\nProblem file : " + c[COLORS.error].bold(err.message, err.path)
+          );
+        })
+      )
+    )
+    .pipe(
+      postcss([autoprefixer()], {
+        syntax: postcssScss,
+      })
+    )
     .pipe(sourcemaps.write("./maps"))
     .pipe(dest(BUILD_PATH.style.dir))
     .pipe(rename(renameOptions))
     .pipe(dest(BUILD_PATH.style.dir))
     .pipe(server.stream())
     .on("end", () => {
-      console.log(c[COLORS.success].bold("--------- Style finished compiling! ---------"));
+      console.log(
+        c[COLORS.success].bold("--------- Style finished compiling! ---------")
+      );
     });
 };
-
 
 /* ------------------------------------------------------------------------------
 @name: compileJS
 @description: Compiles ES6 files to ES5 (javascripts)
 --------------------------------------------------------------------------------- */
-const bundle = bundler => {
+const bundle = (bundler) => {
   return bundler
     .transform(babelify, {
-      presets: ["@babel/preset-env"]
+      presets: ["@babel/preset-env"],
     })
     .bundle()
-    .on("error", notify.onError(
-      (err) => {
-        return "\nProblem file : " + c[COLORS.error].bold(err.message, err.path);
-      }
-    ))
+    .on(
+      "error",
+      notify.onError((err) => {
+        return (
+          "\nProblem file : " + c[COLORS.error].bold(err.message, err.path)
+        );
+      })
+    )
     .pipe(source(`${fileName}.js`))
     .pipe(buffer())
-    .pipe(sourcemaps.init({
-      loadMaps: true
-    }))
+    .pipe(
+      sourcemaps.init({
+        loadMaps: true,
+      })
+    )
     .pipe(sourcemaps.write("./maps"))
     .pipe(dest(BUILD_PATH.script.dir))
     .pipe(rename(renameOptions))
     .pipe(dest(BUILD_PATH.script.dir))
     .on("end", (done) => {
-      console.log(c[COLORS.success].bold("--------- JS finished compiling! ---------"));
+      console.log(
+        c[COLORS.success].bold("--------- JS finished compiling! ---------")
+      );
     });
 };
 
 export const compileJS = () => {
-  return bundle(browserify(DEV_PATH.script.main, {
-    debug: true
-  }));
+  return bundle(
+    browserify(DEV_PATH.script.main, {
+      debug: true,
+    })
+  );
 };
-
 
 /* ------------------------------------------------------------------------------
 @name: compressImage
@@ -314,35 +332,41 @@ export const compileJS = () => {
 export const compressImage = () => {
   return src(DEV_PATH.image)
     .pipe(changed(BUILD_PATH.image))
-    .pipe(imagemin([
-      // jpg
-      imageminMozjpeg({
-        quality: 76.75
-      }),
-      // png
-      imageminPngquant({
-        speed: 1,
-        quality: [0.225, 0.425]
-      }),
-      // svg
-      imagemin.svgo({
-        plugins: [
-          { removeViewBox: true },
-          { cleanupIDs: false },
-          { removeUnknownsAndDefaults: false }
-        ]
-      }),
-      // gif
-      imageminGiflossy({
-        optimizationLevel: 3,
-        optimize: 3,
-        lossy: 2
-      })
-    ]))
+    .pipe(
+      imagemin([
+        // jpg
+        imageminMozjpeg({
+          quality: 76.75,
+        }),
+        // png
+        imageminPngquant({
+          speed: 1,
+          quality: [0.225, 0.425],
+        }),
+        // svg
+        imagemin.svgo({
+          plugins: [
+            { removeViewBox: true },
+            { cleanupIDs: false },
+            { removeUnknownsAndDefaults: false },
+          ],
+        }),
+        // gif
+        imageminGiflossy({
+          optimizationLevel: 3,
+          optimize: 3,
+          lossy: 2,
+        }),
+      ])
+    )
     .pipe(dest(BUILD_PATH.image))
     .pipe(server.stream())
     .on("end", () => {
-      console.log(c[COLORS.success].bold("--------- Image finished compressing! ---------"));
+      console.log(
+        c[COLORS.success].bold(
+          "--------- Image finished compressing! ---------"
+        )
+      );
     });
 };
 
@@ -355,16 +379,21 @@ export const copyVendorJS = () => {
     .pipe(concat(DEV_PATH.script.vendor.concat))
     .pipe(dest(BUILD_PATH.script.dir))
     .pipe(rename(renameOptions))
-    .pipe(uglify({
-      mangle: false
-    }))
+    .pipe(
+      uglify({
+        mangle: false,
+      })
+    )
     .pipe(dest(BUILD_PATH.script.dir))
     .pipe(server.stream())
     .on("end", () => {
-      console.log(c[COLORS.success].bold("--------- Vendor JS finished copying! ---------"));
+      console.log(
+        c[COLORS.success].bold(
+          "--------- Vendor JS finished copying! ---------"
+        )
+      );
     });
 };
-
 
 /* ------------------------------------------------------------------------------
 @name: copyFonts
@@ -376,7 +405,9 @@ export const copyFonts = () => {
     .pipe(dest(BUILD_PATH.fonts))
     .pipe(server.stream())
     .on("end", () => {
-      console.log(c[COLORS.success].bold("--------- Fonts finished copying! ---------"));
+      console.log(
+        c[COLORS.success].bold("--------- Fonts finished copying! ---------")
+      );
     });
 };
 
@@ -388,7 +419,9 @@ export const copyData = () => {
   return src(DEV_PATH.others.data)
     .pipe(dest(BUILD_PATH.others.data))
     .on("end", () => {
-      console.log(c[COLORS.success].bold("--------- Data finished copying! ---------"));
+      console.log(
+        c[COLORS.success].bold("--------- Data finished copying! ---------")
+      );
     });
 };
 
@@ -397,7 +430,11 @@ export const copyForbidden = () => {
     .pipe(rename("index.html"))
     .pipe(multiDest(BUILD_PATH.others.forbidden))
     .on("end", () => {
-      console.log(c[COLORS.success].bold("--------- Forbidden finished copying! ---------"));
+      console.log(
+        c[COLORS.success].bold(
+          "--------- Forbidden finished copying! ---------"
+        )
+      );
     });
 };
 
@@ -405,8 +442,12 @@ export const copyCustomStyle = () => {
   return src(DEV_PATH.others.customStyle)
     .pipe(dest(BUILD_PATH.style.dir))
     .pipe(server.stream())
-    .on('end', () => {
-      console.log(c[COLORS.success].bold('--------- Custom Style finished copying! ---------'));
+    .on("end", () => {
+      console.log(
+        c[COLORS.success].bold(
+          "--------- Custom Style finished copying! ---------"
+        )
+      );
     });
 };
 
@@ -414,8 +455,12 @@ export const copyCustomScript = () => {
   return src(DEV_PATH.others.customScript)
     .pipe(dest(BUILD_PATH.script.dir))
     .pipe(server.stream())
-    .on('end', () => {
-      console.log(c[COLORS.success].bold('--------- Custom Script finished copying! ---------'));
+    .on("end", () => {
+      console.log(
+        c[COLORS.success].bold(
+          "--------- Custom Script finished copying! ---------"
+        )
+      );
     });
 };
 
@@ -425,7 +470,6 @@ export const copyOthers = parallel(
   copyCustomStyle,
   copyCustomScript
 );
-
 
 /* ------------------------------------------------------------------------------
 @name: Task Watch
@@ -451,7 +495,6 @@ export const devWatch = (done) => {
   watch(DEV_PATH.fonts, copyFonts);
 
   return done();
-
 };
 
 /* ------------------------------------------------------------------------------
@@ -474,31 +517,42 @@ exports.default = series(
 --------------------------------------------------------------------------------- */
 export const optimizeStyle = () => {
   return src(BUILD_PATH.style.main)
-    .pipe(postcss([combineMqSort({sort: 'desktop-first'})], {
-      syntax: postcssScss
-    }))
-    .pipe(stripCssComments({
-      preserve: false
-    }))
-    .pipe(cleanCSS({
-      debug: true
-    }, (details) => {
-      console.log(
-        c[COLORS.success].bold("--------- Original Size ") +
-        c[COLORS.build.name].bold(`(${details.name}) `) +
-        c[COLORS.build.size].bold(details.stats.originalSize) +
-        c[COLORS.success].bold(" ---------")
-      );
-      console.log(
-        c[COLORS.success].bold("--------- Minified Size ") +
-        c[COLORS.build.name].bold(`(${details.name}) `) +
-        c[COLORS.build.size].bold(details.stats.minifiedSize) +
-        c[COLORS.success].bold(" ---------")
-      );
-    }))
+    .pipe(
+      postcss([combineMqSort({ sort: "desktop-first" })], {
+        syntax: postcssScss,
+      })
+    )
+    .pipe(
+      stripCssComments({
+        preserve: false,
+      })
+    )
+    .pipe(
+      cleanCSS(
+        {
+          debug: true,
+        },
+        (details) => {
+          console.log(
+            c[COLORS.success].bold("--------- Original Size ") +
+              c[COLORS.build.name].bold(`(${details.name}) `) +
+              c[COLORS.build.size].bold(details.stats.originalSize) +
+              c[COLORS.success].bold(" ---------")
+          );
+          console.log(
+            c[COLORS.success].bold("--------- Minified Size ") +
+              c[COLORS.build.name].bold(`(${details.name}) `) +
+              c[COLORS.build.size].bold(details.stats.minifiedSize) +
+              c[COLORS.success].bold(" ---------")
+          );
+        }
+      )
+    )
     .pipe(dest(BUILD_PATH.style.dir))
     .on("end", () => {
-      console.log(c[COLORS.success].bold("--------- Style finished optimizing! ---------"));
+      console.log(
+        c[COLORS.success].bold("--------- Style finished optimizing! ---------")
+      );
     });
 };
 
@@ -508,15 +562,18 @@ export const optimizeStyle = () => {
 --------------------------------------------------------------------------------- */
 export const optimizeJS = () => {
   return src(BUILD_PATH.script.main)
-    .pipe(uglify({
-      mangle: false
-    }))
+    .pipe(
+      uglify({
+        mangle: false,
+      })
+    )
     .pipe(dest(BUILD_PATH.script.dir))
     .on("end", () => {
-      console.log(c[COLORS.success].bold("--------- JS finished optimizing! ---------"));
+      console.log(
+        c[COLORS.success].bold("--------- JS finished optimizing! ---------")
+      );
     });
 };
-
 
 /* ------------------------------------------------------------------------------
 @name: Build Task
@@ -526,10 +583,7 @@ exports.build = series(
   cleanBuild,
   compressImage,
   parallel(copyVendorJS, copyFonts),
-  parallel(
-    series(compileStyle, optimizeStyle),
-    series(compileJS, optimizeJS)
-  ),
+  parallel(series(compileStyle, optimizeStyle), series(compileJS, optimizeJS)),
   copyOthers,
   compilePug,
   cleanTemporary
