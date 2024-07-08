@@ -392,9 +392,10 @@
   .header__content
     .container
       .header__wrapper
+        ='\n'
         //header__logo
         a.header__logo(href='#')
-          img.header__logo__el(src='assets/img/logo/apple.svg' alt='Apple Logo')/
+          img.header__logo__el(src='assets/img/logo/apple.png' alt='Apple Logo')/
         //header__menu
         .header__menu
           ul.header__nav
@@ -414,19 +415,28 @@
                               li.mega-menu__item
                                 a.mega-menu__link(href=subItem.link)
                                   | !{subItem.text}
-                      img.arrow-prev(src="assets/img/icon/arrow.svg", alt="icon prev")
+                      img.arrow-prev(src="assets/img/icon/chevron.png", alt="icon prev")
 
-        //header__icon
-        .header__icon
-          .header__search.js-toggle-search
-            img.header__search__el(src='assets/img/icon/search.png' alt='search')/
-          //burger-menu
+        .header__menu__right
+          .header__icon
+            .header__icon__search.js-toggle-search
+              ='\n'
+              img(src='assets/img/icon/search.png' alt='search')/
+            .header__icon__market
+              ='\n'
+              a.header__icon__link(href="#")
+                ='\n'
+                img(src="assets/img/icon/shopping-bag.png", alt="icon bag")/
+            //burger-menu
           button.burger-menu.js-burger-menu(type='button')
+            ='\n'
             span.burger-menu__bar
+            ='\n'
             span.burger-menu__bar
-
-      // Pindahkan header__form di luar header__wrapper
       .header__form
+        ='\n'
         form.header__form__search(action="#")
+        ='\n'
         input.search-input(type="text" name="search" placeholder="Telusuri apple.com")
+        ='\n'
         img.search-icon(src="assets/img/icon/search.png", alt="icon search")

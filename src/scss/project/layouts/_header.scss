@@ -1,5 +1,5 @@
 .header {
-  background-color: color(primary);
+  background-color: color(secondary);
   padding: 10px 0;
   position: fixed;
   top: 0;
@@ -14,13 +14,16 @@
   }
   &__wrapper {
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between;
     align-items: center;
     user-select: none;
-    gap: 0 32px;
+    @include medium {
+      justify-content: space-between;
+    }
   }
   &__logo {
-    height: 24px;
+    height: 20px;
+    margin-right: 18px;
     &__el {
       width: 100%;
       height: 100%;
@@ -34,7 +37,7 @@
       bottom: 0;
       right: 0;
       width: 100%;
-      background-color: black;
+      background-color: color(secondary);
       padding-top: 50px;
       overflow-x: auto;
       transform: translateY(-100%);
@@ -50,11 +53,16 @@
       @include medium {
         display: block;
         position: absolute;
-        top: -36px;
-        height: 64px;
-        width: 64px;
+        top: -20px;
+        height: 24px;
+        width: 24px;
         left: 12px;
-        opacity: 0.5;
+      }
+    }
+    &__right {
+      @include medium {
+        display: flex;
+        align-items: center;
       }
     }
   }
@@ -63,7 +71,7 @@
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 0 32px;
+    margin-right: 18px;
     @include large {
       gap: 0 4px;
     }
@@ -72,6 +80,10 @@
       padding: 0;
     }
     &__item {
+      margin-right: 18px;
+      @include large {
+        margin-right: 8px;
+      }
       @include medium {
         padding: 8px 48px;
       }
@@ -87,7 +99,7 @@
       padding: 0 8px;
       @include font-size(small);
       letter-spacing: 0.01em;
-      color: color(secondary);
+      color: color(primary);
       // position: relative;
       transition: all 0.3s ease;
       border: 0;
@@ -96,9 +108,10 @@
         @include font-size(h2);
         white-space: normal;
         padding: 0;
+        font-weight: bold;
       }
       &:hover {
-        color: grey;
+        color: color(black, 1);
       }
     }
   }
@@ -108,7 +121,7 @@
     position: absolute;
     top: 34px;
     left: 0;
-    background-color: color(black, 1);
+    background-color: color(secondary);
     padding: 20px 0px 40px 0;
     width: 100%;
     box-shadow: 2px 4px rgba(0, 0, 0, 0.1);
@@ -116,10 +129,9 @@
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.3s ease, visibility 0.3s ease;
-
     @include medium {
       height: 100%;
-      background-color: black;
+      background-color: color(secondary);
       left: 0;
       padding: 20px 40px 40px;
       // display: none;
@@ -174,38 +186,51 @@
     &__link {
       @include font-size(h3);
       text-decoration: none;
-      color: color(white);
+      color: color(black, 1);
     }
   }
 
   &__icon {
     display: flex;
-    gap: 0 24px;
     height: 16px;
+    align-items: center;
     cursor: pointer;
-    .header__search {
-      &__el {
+    @include medium {
+      margin-right: 18px;
+    }
+    &__search {
+      margin-right: 18px;
+      height: 24px;
+      & img {
         width: 100%;
         height: 100%;
         display: block;
       }
     }
-    .burger-menu {
-      display: none;
-      @include medium {
+    &__market {
+      height: 24px;
+      & img {
+        width: 100%;
+        height: 100%;
         display: block;
-        &__bar {
-          transition: all 0.3s ease 850ms;
-          .show-menu & {
-            transition-delay: 100ms;
-            &:nth-child(1) {
-              transform: rotate(45deg) translate(5px, 5px);
-              transition-delay: 0.2s;
-            }
-            &:nth-child(2) {
-              transform: rotate(-45deg) translate(2px, -1px);
-              transition-delay: 0.2s;
-            }
+      }
+    }
+  }
+  .burger-menu {
+    display: none;
+    @include medium {
+      display: block;
+      &__bar {
+        transition: all 0.3s ease 850ms;
+        .show-menu & {
+          transition-delay: 100ms;
+          &:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+            transition-delay: 0.2s;
+          }
+          &:nth-child(2) {
+            transform: rotate(-45deg) translate(2px, -1px);
+            transition-delay: 0.2s;
           }
         }
       }

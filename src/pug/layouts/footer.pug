@@ -39,6 +39,7 @@
       ul.footer__metadata__list
         each item in footerSectionData
           li.footer__metadata__item
+            ='\n'
             span= item.txt
             if item.link
               ='\n'
@@ -287,6 +288,7 @@
             | near you. Or call 1-800-MY-APPLE.
         .footer__copyright__bottom
           .footer__copyright__locale
+            ='\n'
             a.footer__locale__link(href="#")
               | United States
           .footer__copyright__page-links
