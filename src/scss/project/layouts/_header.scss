@@ -22,7 +22,7 @@
     }
   }
   &__logo {
-    height: 20px;
+    height: 16px;
     margin-right: 18px;
     &__el {
       width: 100%;
@@ -60,10 +60,8 @@
       }
     }
     &__right {
-      @include medium {
-        display: flex;
-        align-items: center;
-      }
+      display: flex;
+      align-items: center;
     }
   }
   &__nav {
@@ -190,30 +188,28 @@
     }
   }
 
-  &__icon {
-    display: flex;
-    height: 16px;
-    align-items: center;
-    cursor: pointer;
-    @include medium {
-      margin-right: 18px;
-    }
-    &__search {
-      margin-right: 18px;
+  &__search {
+    margin-right: 18px;
+    height: 22px;
+    @include x-small {
       height: 24px;
-      & img {
-        width: 100%;
-        height: 100%;
-        display: block;
-      }
     }
-    &__market {
+    & img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  }
+  &__market {
+    height: 24px;
+    margin-right: 18px;
+    @include x-small {
       height: 24px;
-      & img {
-        width: 100%;
-        height: 100%;
-        display: block;
-      }
+    }
+    & img {
+      width: 100%;
+      height: 100%;
+      display: block;
     }
   }
   .burger-menu {
