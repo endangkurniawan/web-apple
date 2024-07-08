@@ -83,7 +83,26 @@
         margin-right: 8px;
       }
       @include medium {
+        opacity: 0;
+        transform: translateY(16px);
         padding: 8px 48px;
+        transition: all 0.3s ease;
+        @for $i from 1 through 6 {
+          $delay: 225 - ($i * 50);
+          &:nth-child(#{$i}) {
+            transition-delay: #{$delay}ms;
+          }
+        }
+        .show-menu & {
+          opacity: 1;
+          transform: none;
+          @for $i from 1 through 11 {
+            $delay: 225 + ($i * 50);
+            &:nth-child(#{$i}) {
+              transition-delay: #{$delay}ms;
+            }
+          }
+        }
       }
 
       &:hover .mega-menu {
@@ -222,11 +241,11 @@
           transition-delay: 100ms;
           &:nth-child(1) {
             transform: rotate(45deg) translate(5px, 5px);
-            transition-delay: 0.2s;
+            transition-delay: 0.9s;
           }
           &:nth-child(2) {
             transform: rotate(-45deg) translate(2px, -1px);
-            transition-delay: 0.2s;
+            transition-delay: 0.9s;
           }
         }
       }
@@ -240,7 +259,7 @@
     .search-input {
       background-color: transparent;
       border: none;
-      color: white;
+      color: color(black, 1);
       width: 100%;
       height: 100%;
       padding-left: 42px;
