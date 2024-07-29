@@ -6,9 +6,9 @@
 const Footer = (() => {
   // - handleAccordionFooter
   const handleAccordionFooter = () => {
-    $(".js-footer-accordion .footer__nav__title").on("click", function (e) {
+    $(".js-footer-accordion .footer__nav__title").on("click", (e) => {
       if ($(window).width() <= 991.98) {
-        const _this = $(this);
+        const _this = $(e.currentTarget);
         const _navWrapper = _this.parents(".footer__nav__item");
 
         // handle untuk menutup semua yang terbuka
@@ -38,7 +38,7 @@ const Footer = (() => {
 
   // - hanlePaddingBottomMain
   const handlePaddingBottomMain = () => {
-    if ($(window).width() > 767.96) {
+    if ($(window).width() > 320) {
       const _heightFooter = $(".footer").innerHeight();
       $(".js-main-site").css("padding-bottom", `${_heightFooter}px`);
     } else {
